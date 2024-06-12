@@ -30,26 +30,26 @@ The node is intended for baking with no need to store content of every previous 
 
 1. Got to [ovh.com](https://www.ovh.com)
 - Select *Eco Dedicated Servers*
-![[1-ovh-eco-dedicated-servers.png]]
+![Step 1](./img/1-ovh-eco-dedicated-servers.png)
 
 2. Select *location* filter 
 - Choose *Europe*
-![[2-select-location.png]]
+![Step 2](./img/2-select-location.png)
 
 3. Select *Hardware* filter 
 - Select min. **16GB** RAM
 - Select **NVMe** storage for SSD
 - Select min. **256GB** storage
-![[3-select-hardware.png]]
+![Step 3](./img/3-select-hardware.png)
 
 4. Select suitable server
 - Choose one with min. **100Mbps** bandwidth
 - Press *Configure*
-![[4-choose-server.png]]
+![Step 4](./img/4-choose-server.png)
 
 5. Check order summary
 - Proceed through the payment process.
-![[5-complete-configuration-and-payment.png]]
+![Step5](./img/5-complete-configuration-and-payment.png)
 
 ## Deployment of a tezos node
 
