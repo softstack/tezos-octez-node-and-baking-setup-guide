@@ -17,6 +17,8 @@ This is the documentation for setting up a Tezos Baker/Validator node with a ser
 - [ignoreip = \<list of whitelisted IP address, your local daily laptop/pc\>](#ignoreip--list-of-whitelisted-ip-address-your-local-daily-laptoppc)
   - [2.8 Configure your Firewall](#28-configure-your-firewall)
   - [2.9 Verify Listening Ports](#29-verify-listening-ports)
+- [3. Initial Setup](#3-initial-setup)
+  - [3.1 Time Sync Check](#31-time-sync-check)
 
 # 1. Prerequisites
 
@@ -68,7 +70,7 @@ The node is intended for baking with no need to store content of every previous 
 
 3. Configure VPS
 
-- Choose **Debian** as Operating System (Latest Ubuntu 24.04 had a lot of problems).
+- Choose **Debian 12** as Operating System (Latest Ubuntu 24.04 had a lot of problems).
 
 ![Step 3](./img/3-configure_vps.png)
 
@@ -117,15 +119,28 @@ Create a new ssh key locally
 
 Transfer the public key to your remote node. Update keyname.pub appropriately.
 
-    ssh-copy-id -i $HOME/.ssh/keyname.pub ethereum@server.public.ip.address
+    ssh-copy-id -i $HOME/.ssh/keyname.pub debian@server.public.ip.address
 
 Login with your new ethereum user
 
     ssh tezos@server.public.ip.address
 
-Disable root login and password based login. Edit the /etc/ssh/sshd_config file
+Disable root login and password based login. 
 
+    Edit the /etc/ssh/sshd_config file
     sudo nano /etc/ssh/sshd_config
+
+    Locate ChallengeResponseAuthentication and update to no
+    ChallengeResponseAuthentication no
+
+    Locate PasswordAuthentication update to no
+    PasswordAuthentication no
+
+    Locate PermitRootLogin and update to prohibit-password
+    PermitRootLogin prohibit-password
+
+    Locate PermitEmptyPasswords and update to no
+    PermitEmptyPasswords no
 
 Validate the syntax of your new SSH configuration.
 
@@ -138,13 +153,13 @@ If no errors with the syntax validation, restart the SSH process
 ## 2.4 Update your system
 It's critically important to keep your system up-to-date with the latest patches to prevent intruders from accessing your system.
 
-    sudo apt-get update -y && sudo apt dist-upgrade -y
-    sudo apt-get autoremove
-    sudo apt-get autoclean
+    sudo apt update -y && sudo apt dist-upgrade -y
+    sudo apt autoremove
+    sudo apt autoclean
 
 Enable automatic updates so you don't have to manually install them.
 
-    sudo apt-get install unattended-upgrades 
+    sudo apt install unattended-upgrades 
     sudo dpkg-reconfigure -plow unattended-upgrades
 
 ## 2.5 Disable root account
@@ -207,6 +222,8 @@ Restart fail2ban for settings to take effect.
 ## 2.8 Configure your Firewall
 The standard UFW firewall can be used to control network access to your node. With any new installation, ufw is disabled by default. Enable it with the following settings.
 
+    sudo apt install ufw
+
 By default, deny all incoming and outgoing traffic
 
     sudo ufw default deny incoming
@@ -242,9 +259,61 @@ Might want to enable ufw logging
 
     sudo ufw logging on
 
->Note It is dangerous to open 3000 / 9090 for Grafana or Prometheus on a VPS/cloud node.
+>**Note** It is dangerous to open 3000 / 9090 for Grafana or Prometheus on a VPS/cloud node.
 
 ## 2.9 Verify Listening Ports
 If you want to maintain a secure server, you should validate the listening network ports every once in a while. This will provide you essential information about your network.
 
     sudo ss -tulpn or sudo netstat -tulpn
+
+
+## 2.10 Time Sync Check
+Run the following command:
+
+    timedatectl 
+
+✅ Check if NTP Service is active.
+✅ Check if Local time, Time zone, and Universal time are all correct.
+✅ If NTP Service is not active, run:
+
+    sudo timedatectl set-ntp on 
+    sudo timedatectl set-ntp true
+
+    sudo timedatectl set-timezone Europe/Berlin
+
+
+If you see error message Failed to set ntp: NTP not supported, you may need to install chrony or ntp package.
+
+>**Note** by default, VMs may disable NTP so you may need to find a work-around for your environment.
+
+# 3. Tezos Node Setup
+
+## 3.1 Get octez packages
+
+[Link](https://chrispinnock.com/tezos/node/)
+
+
+    sudo apt update && sudo apt upgrade
+    sudo apt install libev4 libhidapi-libusb0 curl
+
+Get octez node, octez client then octez baker and Install in that particular order
+
+    curl -o octez-node.deb https://pkgbeta.tzinit.org/debian-12/octez-node_20.1-1_amd64.deb
+    sudo dpkg -i octez-node.deb
+
+    curl -o octez-client.deb https://pkgbeta.tzinit.org/debian-12/octez-client_20.1-1_amd64.deb
+    sudo dpkg -i octez-client.deb
+
+    curl -o octez-baker.deb https://pkgbeta.tzinit.org/debian-12/octez-baker_20.1-1_amd64.deb
+    sudo dpkg -i octez-baker.deb
+
+    sudo apt-get install -f
+
+Create tezos folder and grant access to tezos user
+
+    sudo mkdir -p /var/tezos
+    sudo chown -R tezos:tezos /var/tezos
+    sudo mkdir -p /var/log/tezos
+    sudo chown -R tezos:tezos /var/log/tezos
+    sudo chmod +x /usr/bin/octez-node
+
