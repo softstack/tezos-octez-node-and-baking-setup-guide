@@ -317,3 +317,89 @@ Create tezos folder and grant access to tezos user
     sudo chown -R tezos:tezos /var/log/tezos
     sudo chmod +x /usr/bin/octez-node
 
+Init configuration
+
+    octez-node config init --data-dir /var/tezos/.tezos-node \
+        --network=mainnet \
+        --history-mode=rolling \
+        --net-addr="[::]:9732" \
+        --rpc-addr="127.0.0.1:8732" \
+        --metrics-addr="127.0.0.1:9091"
+
+Edit configuration 
+
+    cat /var/tezos/.tezos-node/config.json
+
+## 3.2 Get snapshot
+
+    wget -O /tmp/snap https://snapshots.eu.tzinit.org/mainnet/rolling
+    octez-node snapshot import /tmp/snap --data-dir /var/tezos/.tezos-node --no-check
+
+![Snapshot import output](./img/snapshot-import-output.png)
+
+    rm /tmp/snap
+
+## 3.3 Start node on boot
+
+Create a systemd service to enable that the node starts on boot
+
+    sudo nano /etc/systemd/system/octez-node.service
+
+Add this to the file.
+```
+[Unit]
+Description=Tezos Node
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=tezos
+Group=tezos
+ExecStart=/usr/bin/octez-node run --data-dir /var/tezos/.tezos-node --rpc-addr 127.0.0.1:8732 --log-output /var/log/tezos/node.log --metrics-addr=:9091
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Reload daemon service, enable new service and start it
+
+    sudo systemctl daemon-reload
+    sudo systemctl enable octez-node.service
+    sudo systemctl start octez-node.service
+
+Reload with
+
+    sudo systemctl restart octez-node.service
+
+Check status with
+
+    sudo systemctl status octez-node.service
+
+![Status octez node service](./img/status-octez-node-service.png)
+
+## 3.4 Check node logs
+
+The node will now start to sync with the blockchain.
+
+You can also monitor the progress of the sync with the network using below command. Ultimately it will say *Node is bootstrapped.*
+
+    octez-client bootstrapped
+
+![Bootstrapped output](./img/bootstrapped-sync-status.png)
+
+You can now view the progress of the node in the log file. It will sync with the network and fill the gap from the point that the snapshot was taken to the current block. Then you will have a working Tezos node.
+
+    tail -f /var/log/tezos/node.log
+    journalctl -f -u octez-node.service -b
+
+# 4. Tezos Client Setup
+
+## 4.1 Set base directory
+
+    sudo mkdir -p /var/tezos/.tezos-client
+    sudo chown -R tezos:tezos /var/tezos/.tezos-client
+    octez-client --base-dir /var/tezos/.tezos-client config init
+    octez-client --base-dir /var/tezos/.tezos-client --endpoint http://localhost:8732 config update
+    octez-client --base-dir /var/tezos/.tezos-client rpc get /chains/main/blocks/head
