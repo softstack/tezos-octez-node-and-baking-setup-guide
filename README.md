@@ -1,5 +1,3 @@
-# 0. Introduction
-
 This project guides you through the process of setting up a Tezos validator node on a server from [OVH](https://www.ovh.com). Tezos is a self-amending blockchain network that incorporates a formal, on-chain mechanism for proposing, selecting, testing, and activating protocol upgrades.
 
 A Tezos validator node consists of several key components:
