@@ -1,0 +1,651 @@
+Linux 6.1.0-13-cloud-amd64 (ip-172-31-25-160) 	06/21/24 	_x86_64_	(2 CPU)
+
+09:39:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+09:40:21        0      9218    8.13    1.02    0.00    0.27    9.15     1  octez-node
+09:40:21        0      9243    1.50    0.30    0.00    0.18    1.80     0  octez-node
+09:40:21        0     16736    0.90    0.62    0.00    0.48    1.52     0  octez-baker-PtP
+
+09:39:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+09:40:21        0      9218      0.00      0.00 1694140 1051668  26.44  octez-node
+09:40:21        0      9243      0.00      0.00 1219200  928576  23.35  octez-node
+09:40:21        0     16736      0.00      0.00 1023796  208644   5.25  octez-baker-PtP
+
+09:40:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+09:41:21        0      9218    9.17    1.25    0.00    0.33   10.42     0  octez-node
+09:41:21        0      9243    0.82    0.05    0.00    0.02    0.87     0  octez-node
+09:41:21        0     16736    0.95    0.77    0.00    0.52    1.72     0  octez-baker-PtP
+
+09:40:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+09:41:21        0      9218      0.00      0.00 1694140 1051668  26.44  octez-node
+09:41:21        0      9243      0.00      0.00 1219200  928576  23.35  octez-node
+09:41:21        0     16736      1.52      0.00 1031992  209172   5.26  octez-baker-PtP
+
+09:41:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+09:42:21        0      9218    8.40    0.92    0.00    0.25    9.32     0  octez-node
+09:42:21        0      9243    1.20    0.12    0.00    0.03    1.32     1  octez-node
+09:42:21        0     16736    0.83    0.77    0.00    0.48    1.60     0  octez-baker-PtP
+
+09:41:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+09:42:21        0      9218      0.00      0.00 1694140 1051668  26.44  octez-node
+09:42:21        0      9243      0.00      0.00 1219200  928576  23.35  octez-node
+09:42:21        0     16736      0.03      0.00 1097528  209172   5.26  octez-baker-PtP
+
+09:42:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+09:43:21        0      9218    8.58    1.03    0.00    0.32    9.62     0  octez-node
+09:43:21        0      9243    0.97    0.05    0.00    0.02    1.02     0  octez-node
+09:43:21        0     16736    0.97    0.72    0.00    0.57    1.68     1  octez-baker-PtP
+
+09:42:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+09:43:21        0      9218      0.00      0.00 1694140 1051668  26.44  octez-node
+09:43:21        0      9243      0.00      0.00 1219200  928576  23.35  octez-node
+09:43:21        0     16736      0.10      0.00 1097528  209172   5.26  octez-baker-PtP
+
+09:43:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+09:44:21        0      9218    8.95    1.08    0.00    0.23   10.03     0  octez-node
+09:44:21        0      9243    0.98    0.05    0.00    0.07    1.03     0  octez-node
+09:44:21        0     16736    0.82    0.72    0.00    0.47    1.53     1  octez-baker-PtP
+
+09:43:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+09:44:21        0      9218      0.00      0.00 1694140 1051668  26.44  octez-node
+09:44:21        0      9243      0.00      0.00 1219200  928576  23.35  octez-node
+09:44:21        0     16736      0.00      0.00 1097528  209172   5.26  octez-baker-PtP
+
+09:44:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+09:45:21        0      9218    8.37    1.02    0.00    0.22    9.38     1  octez-node
+09:45:21        0      9243    1.08    0.10    0.00    0.03    1.18     0  octez-node
+09:45:21        0     16736    0.95    0.62    0.00    0.45    1.57     0  octez-baker-PtP
+
+09:44:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+09:45:21        0      9218      0.00      0.00 1694140 1051668  26.44  octez-node
+09:45:21        0      9243      0.00      0.00 1219200  928576  23.35  octez-node
+09:45:21        0     16736      0.00      0.00 1097528  209172   5.26  octez-baker-PtP
+
+09:45:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+09:46:21        0      9218    8.43    0.98    0.00    0.25    9.42     0  octez-node
+09:46:21        0      9243    1.22    0.08    0.00    0.03    1.30     1  octez-node
+09:46:21        0     16736    0.82    0.80    0.00    0.57    1.62     0  octez-baker-PtP
+
+09:45:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+09:46:21        0      9218      0.05      0.03 1694140 1051668  26.44  octez-node
+09:46:21        0      9243      0.00      0.00 1219200  928576  23.35  octez-node
+09:46:21        0     16736      0.00      0.00 1097528  209172   5.26  octez-baker-PtP
+
+09:46:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+09:47:21        0      9218    8.40    0.93    0.00    0.30    9.33     0  octez-node
+09:47:21        0      9243    1.93    0.15    0.00    0.07    2.08     1  octez-node
+09:47:21        0     16736    0.93    0.77    0.00    0.50    1.70     1  octez-baker-PtP
+
+09:46:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+09:47:21        0      9218      0.00      0.00 1694140 1051668  26.44  octez-node
+09:47:21        0      9243      0.00      0.00 1219200  928576  23.35  octez-node
+09:47:21        0     16736      0.02      0.00 1097528  209172   5.26  octez-baker-PtP
+
+09:47:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+09:48:21        0      9218    8.60    1.17    0.00    0.23    9.77     0  octez-node
+09:48:21        0      9243    1.13    0.02    0.00    0.03    1.15     0  octez-node
+09:48:21        0     16736    0.95    0.65    0.00    0.48    1.60     1  octez-baker-PtP
+
+09:47:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+09:48:21        0      9218      0.00      0.00 1694140 1051668  26.44  octez-node
+09:48:21        0      9243      0.00      0.00 1219200  928576  23.35  octez-node
+09:48:21        0     16736      0.00      0.00 1097528  209172   5.26  octez-baker-PtP
+
+09:48:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+09:49:21        0      9218    8.28    0.98    0.00    0.35    9.27     1  octez-node
+09:49:21        0      9243    1.17    0.10    0.00    0.05    1.27     1  octez-node
+09:49:21        0     16736    0.87    0.90    0.00    0.60    1.77     0  octez-baker-PtP
+
+09:48:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+09:49:21        0      9218      0.00      0.00 1694140 1051624  26.44  octez-node
+09:49:21        0      9243      0.02      0.00 1219200  928576  23.35  octez-node
+09:49:21        0     16736      0.00      0.00 1097528  209172   5.26  octez-baker-PtP
+
+09:49:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+09:50:21        0      9218    9.42    1.03    0.00    0.42   10.45     0  octez-node
+09:50:21        0      9243    0.95    0.07    0.00    0.05    1.02     0  octez-node
+09:50:21        0     16736    0.95    0.77    0.00    0.65    1.72     0  octez-baker-PtP
+
+09:49:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+09:50:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+09:50:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+09:50:21        0     16736      0.00      0.00 1097528  209124   5.26  octez-baker-PtP
+
+09:50:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+09:51:21        0      9218    8.73    1.17    0.00    0.33    9.90     0  octez-node
+09:51:21        0      9243    1.00    0.07    0.00    0.02    1.07     0  octez-node
+09:51:21        0     16736    1.02    0.73    0.00    0.58    1.75     1  octez-baker-PtP
+
+09:50:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+09:51:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+09:51:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+09:51:21        0     16736      0.00      0.00 1097528  209124   5.26  octez-baker-PtP
+
+09:51:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+09:52:21        0      9218    9.03    1.13    0.00    0.35   10.17     0  octez-node
+09:52:21        0      9243    1.15    0.13    0.00    0.12    1.28     0  octez-node
+09:52:21        0     16736    0.97    0.65    0.00    0.50    1.62     0  octez-baker-PtP
+
+09:51:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+09:52:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+09:52:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+09:52:21        0     16736      0.00      0.00 1097528  209124   5.26  octez-baker-PtP
+
+09:52:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+09:53:21        0      9218    8.80    1.03    0.00    0.22    9.83     0  octez-node
+09:53:21        0      9243    1.23    0.10    0.00    0.03    1.33     0  octez-node
+09:53:21        0     16736    0.87    0.72    0.00    0.55    1.58     1  octez-baker-PtP
+
+09:52:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+09:53:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+09:53:21        0      9243      0.02      0.03 1219200  928568  23.35  octez-node
+09:53:21        0     16736      0.00      0.00 1097528  209124   5.26  octez-baker-PtP
+
+09:53:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+09:54:21        0      9218    8.20    0.88    0.00    0.20    9.08     1  octez-node
+09:54:21        0      9243    1.22    0.05    0.00    0.03    1.27     0  octez-node
+09:54:21        0     16736    0.77    0.53    0.00    0.43    1.30     0  octez-baker-PtP
+
+09:53:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+09:54:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+09:54:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+09:54:21        0     16736      0.00      0.00 1097528  209124   5.26  octez-baker-PtP
+
+09:54:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+09:55:21        0      9218   10.63    1.28    0.00    0.40   11.92     1  octez-node
+09:55:21        0      9243    1.05    0.08    0.00    0.07    1.13     1  octez-node
+09:55:21        0     16736    1.00    0.75    0.00    0.57    1.75     0  octez-baker-PtP
+
+09:54:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+09:55:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+09:55:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+09:55:21        0     16736      0.00      0.00 1097528  209124   5.26  octez-baker-PtP
+
+09:55:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+09:56:21        0      9218    8.70    1.00    0.00    0.27    9.70     1  octez-node
+09:56:21        0      9243    1.13    0.05    0.00    0.05    1.18     0  octez-node
+09:56:21        0     16736    0.82    0.80    0.00    0.57    1.62     0  octez-baker-PtP
+
+09:55:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+09:56:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+09:56:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+09:56:21        0     16736      0.00      0.00 1097528  209124   5.26  octez-baker-PtP
+
+09:56:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+09:57:21        0      9218    8.75    1.22    0.00    0.27    9.97     1  octez-node
+09:57:21        0      9243    1.00    0.07    0.00    0.03    1.07     1  octez-node
+09:57:21        0     16736    0.93    0.72    0.00    0.55    1.65     0  octez-baker-PtP
+
+09:56:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+09:57:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+09:57:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+09:57:21        0     16736      0.00      0.00 1097528  209124   5.26  octez-baker-PtP
+
+09:57:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+09:58:21        0      9218    8.45    0.98    0.00    0.28    9.43     0  octez-node
+09:58:21        0      9243    0.93    0.02    0.00    0.03    0.95     1  octez-node
+09:58:21        0     16736    0.95    0.63    0.00    0.45    1.58     1  octez-baker-PtP
+
+09:57:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+09:58:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+09:58:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+09:58:21        0     16736      0.00      0.00 1097528  209124   5.26  octez-baker-PtP
+
+09:58:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+09:59:21        0      9218    9.45    1.33    0.00    0.33   10.78     0  octez-node
+09:59:21        0      9243    1.17    0.13    0.00    0.08    1.30     1  octez-node
+09:59:21        0     16736    0.92    0.73    0.00    0.48    1.65     1  octez-baker-PtP
+
+09:58:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+09:59:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+09:59:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+09:59:21        0     16736      0.05      0.00 1097528  209124   5.26  octez-baker-PtP
+
+09:59:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:00:21        0      9218    8.72    1.22    0.00    0.37    9.93     1  octez-node
+10:00:21        0      9243    1.30    0.10    0.00    0.05    1.40     1  octez-node
+10:00:21        0     16736    0.93    0.78    0.00    0.65    1.72     0  octez-baker-PtP
+
+09:59:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:00:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:00:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:00:21        0     16736      0.00      0.00 1097528  209124   5.26  octez-baker-PtP
+
+10:00:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:01:21        0      9218    9.85    1.33    0.00    0.30   11.18     1  octez-node
+10:01:21        0      9243    1.15    0.15    0.00    0.07    1.30     0  octez-node
+10:01:21        0     16736    1.07    0.80    0.00    0.50    1.87     0  octez-baker-PtP
+
+10:00:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:01:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:01:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:01:21        0     16736      0.00      0.00 1097528  209124   5.26  octez-baker-PtP
+
+10:01:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:02:21        0      9218    8.22    1.15    0.00    0.27    9.37     0  octez-node
+10:02:21        0      9243    0.97    0.05    0.00    0.02    1.02     1  octez-node
+10:02:21        0     16736    0.90    0.67    0.00    0.48    1.57     0  octez-baker-PtP
+
+10:01:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:02:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:02:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:02:21        0     16736      0.00      0.00 1097528  209124   5.26  octez-baker-PtP
+
+10:02:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:03:21        0      9218    7.93    1.00    0.00    0.30    8.93     1  octez-node
+10:03:21        0      9243    1.15    0.08    0.00    0.05    1.23     0  octez-node
+10:03:21        0     16736    1.02    0.58    0.00    0.45    1.60     1  octez-baker-PtP
+
+10:02:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:03:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:03:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:03:21        0     16736      0.00      0.00 1097528  209332   5.26  octez-baker-PtP
+
+10:03:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:04:21        0      9218    7.82    0.95    0.00    0.22    8.77     0  octez-node
+10:04:21        0      9243    0.92    0.08    0.00    0.03    1.00     0  octez-node
+10:04:21        0     16736    0.95    0.62    0.00    0.45    1.57     1  octez-baker-PtP
+
+10:03:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:04:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:04:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:04:21        0     16736      0.00      0.00 1097528  213444   5.37  octez-baker-PtP
+
+10:04:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:05:21        0      9218    9.18    1.18    0.00    0.27   10.37     1  octez-node
+10:05:21        0      9243    1.10    0.10    0.00    0.05    1.20     0  octez-node
+10:05:21        0     16736    0.93    0.72    0.00    0.48    1.65     1  octez-baker-PtP
+
+10:04:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:05:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:05:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:05:21        0     16736      0.03      0.00 1097528  213444   5.37  octez-baker-PtP
+
+10:05:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:06:21        0      9218    8.40    1.20    0.00    0.32    9.60     1  octez-node
+10:06:21        0      9243    0.92    0.07    0.00    0.07    0.98     1  octez-node
+10:06:21        0     16736    1.03    0.70    0.00    0.62    1.73     0  octez-baker-PtP
+
+10:05:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:06:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:06:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:06:21        0     16736      0.00      0.00 1097528  213444   5.37  octez-baker-PtP
+
+10:06:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:07:21        0      9218    8.63    1.15    0.00    0.32    9.78     1  octez-node
+10:07:21        0      9243    1.00    0.07    0.00    0.05    1.07     0  octez-node
+10:07:21        0     16736    0.93    0.82    0.00    0.57    1.75     1  octez-baker-PtP
+
+10:06:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:07:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:07:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:07:21        0     16736      0.13      0.00 1244992  213444   5.37  octez-baker-PtP
+
+10:07:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:08:21        0      9218    8.20    1.12    0.00    0.22    9.32     0  octez-node
+10:08:21        0      9243    0.98    0.07    0.00    0.03    1.05     0  octez-node
+10:08:21        0     16736    0.93    0.72    0.00    0.52    1.65     1  octez-baker-PtP
+
+10:07:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:08:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:08:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:08:21        0     16736      0.00      0.00 1244992  213448   5.37  octez-baker-PtP
+
+10:08:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:09:21        0      9218    8.37    1.00    0.00    0.27    9.37     1  octez-node
+10:09:21        0      9243    0.92    0.03    0.00    0.03    0.95     1  octez-node
+10:09:21        0     16736    0.97    0.65    0.00    0.50    1.62     0  octez-baker-PtP
+
+10:08:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:09:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:09:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:09:21        0     16736      0.00      0.00 1244992  213448   5.37  octez-baker-PtP
+
+10:09:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:10:21        0      9218    8.22    1.02    0.00    0.33    9.23     0  octez-node
+10:10:21        0      9243    0.90    0.07    0.00    0.02    0.97     1  octez-node
+10:10:21        0     16736    0.85    0.83    0.00    0.57    1.68     1  octez-baker-PtP
+
+10:09:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:10:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:10:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:10:21        0     16736      0.00      0.00 1244992  213448   5.37  octez-baker-PtP
+
+10:10:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:11:21        0      9218    8.50    1.07    0.00    0.33    9.57     0  octez-node
+10:11:21        0      9243    0.78    0.08    0.00    0.03    0.87     1  octez-node
+10:11:21        0     16736    0.92    0.75    0.00    0.53    1.67     1  octez-baker-PtP
+
+10:10:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:11:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:11:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:11:21        0     16736      0.00      0.00 1244992  213448   5.37  octez-baker-PtP
+
+10:11:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:12:21        0      9218    7.92    0.90    0.00    0.22    8.82     0  octez-node
+10:12:21        0      9243    1.05    0.10    0.00    0.03    1.15     1  octez-node
+10:12:21        0     16736    0.93    0.70    0.00    0.53    1.63     0  octez-baker-PtP
+
+10:11:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:12:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:12:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:12:21        0     16736      0.00      0.00 1244992  213448   5.37  octez-baker-PtP
+
+10:12:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:13:21        0      9218    8.50    1.07    0.00    0.22    9.57     1  octez-node
+10:13:21        0      9243    1.03    0.07    0.00    0.03    1.10     1  octez-node
+10:13:21        0     16736    0.92    0.68    0.00    0.45    1.60     1  octez-baker-PtP
+
+10:12:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:13:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:13:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:13:21        0     16736      0.00      0.00 1244992  213420   5.37  octez-baker-PtP
+
+10:13:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:14:21        0      9218    8.00    1.00    0.00    0.28    9.00     0  octez-node
+10:14:21        0      9243    0.90    0.05    0.00    0.03    0.95     1  octez-node
+10:14:21        0     16736    0.97    0.68    0.00    0.48    1.65     1  octez-baker-PtP
+
+10:13:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:14:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:14:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:14:21        0     16736      0.00      0.00 1244992  213416   5.37  octez-baker-PtP
+
+10:14:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:15:21        0      9218    8.82    1.12    0.00    0.20    9.93     1  octez-node
+10:15:21        0      9243    0.85    0.07    0.00    0.05    0.92     0  octez-node
+10:15:21        0     16736    0.90    0.63    0.00    0.50    1.53     0  octez-baker-PtP
+
+10:14:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:15:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:15:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:15:21        0     16736      0.00      0.00 1244992  213400   5.37  octez-baker-PtP
+
+10:15:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:16:21        0      9218    8.28    1.12    0.00    0.27    9.40     0  octez-node
+10:16:21        0      9243    0.85    0.05    0.00    0.02    0.90     0  octez-node
+10:16:21        0     16736    0.90    0.60    0.00    0.43    1.50     1  octez-baker-PtP
+
+10:15:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:16:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:16:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:16:21        0     16736      0.00      0.00 1244992  212640   5.35  octez-baker-PtP
+
+10:16:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:17:21        0      9218    9.00    1.10    0.00    0.28   10.10     1  octez-node
+10:17:21        0      9243    1.02    0.07    0.00    0.03    1.08     0  octez-node
+10:17:21        0     16736    0.98    0.73    0.00    0.55    1.72     0  octez-baker-PtP
+
+10:16:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:17:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:17:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:17:21        0     16736      0.00      0.00 1244992  212640   5.35  octez-baker-PtP
+
+10:17:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:18:21        0      9218    8.67    1.30    0.00    0.28    9.97     1  octez-node
+10:18:21        0      9243    1.13    0.07    0.00    0.03    1.20     1  octez-node
+10:18:21        0     16736    0.90    0.72    0.00    0.48    1.62     0  octez-baker-PtP
+
+10:17:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:18:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:18:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:18:21        0     16736      0.00      0.00 1244992  212584   5.35  octez-baker-PtP
+
+10:18:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:19:21        0      9218    9.18    1.02    0.00    0.27   10.20     1  octez-node
+10:19:21        0      9243    0.95    0.10    0.00    0.07    1.05     0  octez-node
+10:19:21        0     16736    1.00    0.57    0.00    0.47    1.57     0  octez-baker-PtP
+
+10:18:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:19:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:19:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:19:21        0     16736      0.13      0.00 1244992  212584   5.35  octez-baker-PtP
+
+10:19:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:20:21        0      9218    8.87    1.15    0.00    0.25   10.02     1  octez-node
+10:20:21        0      9243    0.97    0.07    0.00    0.03    1.03     1  octez-node
+10:20:21        0     16736    0.97    0.65    0.00    0.52    1.62     1  octez-baker-PtP
+
+10:19:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:20:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:20:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:20:21        0     16736      0.00      0.02 1244992  212584   5.35  octez-baker-PtP
+
+10:20:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:21:21        0      9218    8.52    1.22    0.00    0.25    9.73     1  octez-node
+10:21:21        0      9243    0.80    0.03    0.00    0.03    0.83     1  octez-node
+10:21:21        0     16736    0.95    0.62    0.00    0.45    1.57     0  octez-baker-PtP
+
+10:20:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:21:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:21:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:21:21        0     16736      0.00      0.00 1244992  212584   5.35  octez-baker-PtP
+
+10:21:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:22:21        0      9218    8.55    1.00    0.00    0.37    9.55     1  octez-node
+10:22:21        0      9243    1.38    0.12    0.00    0.07    1.50     0  octez-node
+10:22:21        0     16736    1.05    0.73    0.00    0.55    1.78     1  octez-baker-PtP
+
+10:21:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:22:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:22:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:22:21        0     16736      0.00      0.00 1244992  212584   5.35  octez-baker-PtP
+
+10:22:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:23:21        0      9218    9.42    1.10    0.00    0.32   10.52     1  octez-node
+10:23:21        0      9243    2.32    0.17    0.00    0.08    2.48     1  octez-node
+10:23:21        0     16736    0.97    0.73    0.00    0.55    1.70     0  octez-baker-PtP
+
+10:22:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:23:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:23:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:23:21        0     16736      0.00      0.00 1244992  212584   5.35  octez-baker-PtP
+
+10:23:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:24:21        0      9218    8.83    1.02    0.00    0.27    9.85     0  octez-node
+10:24:21        0      9243    0.98    0.05    0.00    0.05    1.03     0  octez-node
+10:24:21        0     16736    0.90    0.73    0.00    0.45    1.63     0  octez-baker-PtP
+
+10:23:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:24:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:24:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:24:21        0     16736      0.00      0.00 1244992  212584   5.35  octez-baker-PtP
+
+10:24:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:25:21        0      9218    8.68    1.20    0.00    0.37    9.88     0  octez-node
+10:25:21        0      9243    0.92    0.03    0.00    0.03    0.95     1  octez-node
+10:25:21        0     16736    0.92    0.77    0.00    0.57    1.68     1  octez-baker-PtP
+
+10:24:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:25:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:25:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:25:21        0     16736      0.00      0.00 1244992  212584   5.35  octez-baker-PtP
+
+10:25:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:26:21        0      9218    9.27    1.23    0.00    0.28   10.50     1  octez-node
+10:26:21        0      9243    1.12    0.08    0.00    0.05    1.20     0  octez-node
+10:26:21        0     16736    0.95    0.70    0.00    0.57    1.65     0  octez-baker-PtP
+
+10:25:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:26:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:26:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:26:21        0     16736      0.00      0.00 1244992  212584   5.35  octez-baker-PtP
+
+10:26:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:27:21        0      9218    8.25    1.18    0.00    0.27    9.43     1  octez-node
+10:27:21        0      9243    1.10    0.12    0.00    0.08    1.22     0  octez-node
+10:27:21        0     16736    1.00    0.60    0.00    0.55    1.60     1  octez-baker-PtP
+
+10:26:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:27:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:27:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:27:21        0     16736      0.00      0.00 1244992  212584   5.35  octez-baker-PtP
+
+10:27:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:28:21        0      9218    8.08    0.98    0.00    0.23    9.07     0  octez-node
+10:28:21        0      9243    0.70    0.02    0.00    0.03    0.72     1  octez-node
+10:28:21        0     16736    0.88    0.73    0.00    0.58    1.62     1  octez-baker-PtP
+
+10:27:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:28:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:28:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:28:21        0     16736      0.00      0.00 1244992  212584   5.35  octez-baker-PtP
+
+10:28:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:29:21        0      9218    8.17    1.02    0.00    0.35    9.18     1  octez-node
+10:29:21        0      9243    1.20    0.07    0.00    0.07    1.27     1  octez-node
+10:29:21        0     16736    0.90    0.73    0.00    0.55    1.63     0  octez-baker-PtP
+
+10:28:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:29:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:29:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:29:21        0     16736      0.00      0.00 1244992  212584   5.35  octez-baker-PtP
+
+10:29:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:30:21        0      9218    8.07    1.00    0.00    0.27    9.07     1  octez-node
+10:30:21        0      9243    1.02    0.05    0.00    0.05    1.07     1  octez-node
+10:30:21        0     16736    0.95    0.72    0.00    0.55    1.67     1  octez-baker-PtP
+
+10:29:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:30:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:30:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:30:21        0     16736      0.00      0.00 1244992  212584   5.35  octez-baker-PtP
+
+10:30:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:31:21        0      9218    8.17    1.02    0.00    0.22    9.18     0  octez-node
+10:31:21        0      9243    0.92    0.07    0.00    0.05    0.98     0  octez-node
+10:31:21        0     16736    0.85    0.70    0.00    0.53    1.55     1  octez-baker-PtP
+
+10:30:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:31:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:31:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:31:21        0     16736      0.00      0.00 1244992  212584   5.35  octez-baker-PtP
+
+10:31:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:32:21        0      9218    8.13    1.05    0.00    0.25    9.18     0  octez-node
+10:32:21        0      9243    0.78    0.05    0.00    0.02    0.83     1  octez-node
+10:32:21        0     16736    0.93    0.67    0.00    0.52    1.60     1  octez-baker-PtP
+
+10:31:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:32:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:32:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:32:21        0     16736      0.00      0.00 1244992  212584   5.35  octez-baker-PtP
+
+10:32:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:33:21        0      9218    7.87    1.05    0.00    0.27    8.92     1  octez-node
+10:33:21        0      9243    1.03    0.03    0.00    0.03    1.07     0  octez-node
+10:33:21        0     16736    0.87    0.80    0.00    0.63    1.67     0  octez-baker-PtP
+
+10:32:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:33:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:33:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:33:21        0     16736      0.00      0.00 1244992  212584   5.35  octez-baker-PtP
+
+10:33:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:34:21        0      9218    7.70    0.95    0.00    0.23    8.65     1  octez-node
+10:34:21        0      9243    2.08    0.03    0.00    0.02    2.12     0  octez-node
+10:34:21        0     16736    0.78    0.68    0.00    0.47    1.47     0  octez-baker-PtP
+
+10:33:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:34:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:34:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:34:21        0     16736      0.00      0.00 1244992  212584   5.35  octez-baker-PtP
+
+10:34:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:35:21        0      9218    6.85    0.98    0.00    0.22    7.83     0  octez-node
+10:35:21        0      9243    0.92    0.03    0.00    0.05    0.95     0  octez-node
+10:35:21        0     16736    0.80    0.73    0.00    0.52    1.53     1  octez-baker-PtP
+
+10:34:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:35:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:35:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:35:21        0     16736      0.00      0.00 1244992  212584   5.35  octez-baker-PtP
+
+10:35:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:36:21        0      9218    8.22    1.12    0.00    0.25    9.33     1  octez-node
+10:36:21        0      9243    0.82    0.10    0.00    0.03    0.92     1  octez-node
+10:36:21        0     16736    0.90    0.67    0.00    0.48    1.57     0  octez-baker-PtP
+
+10:35:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:36:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:36:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:36:21        0     16736      0.00      0.00 1244992  212584   5.35  octez-baker-PtP
+
+10:36:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:37:21        0      9218    8.42    1.10    0.00    0.25    9.52     0  octez-node
+10:37:21        0      9243    1.02    0.03    0.00    0.05    1.05     1  octez-node
+10:37:21        0     16736    0.88    0.72    0.00    0.43    1.60     1  octez-baker-PtP
+
+10:36:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:37:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:37:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:37:21        0     16736      0.00      0.00 1244992  212584   5.35  octez-baker-PtP
+
+10:37:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:38:21        0      9218    7.82    0.98    0.00    0.28    8.80     1  octez-node
+10:38:21        0      9243    0.97    0.02    0.00    0.02    0.98     0  octez-node
+10:38:21        0     16736    0.95    0.65    0.00    0.57    1.60     0  octez-baker-PtP
+
+10:37:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:38:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:38:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:38:21        0     16736      0.00      0.00 1244992  212584   5.35  octez-baker-PtP
+
+10:38:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:39:21        0      9218    8.42    1.15    0.00    0.25    9.57     1  octez-node
+10:39:21        0      9243    0.90    0.07    0.00    0.07    0.97     1  octez-node
+10:39:21        0     16736    0.95    0.78    0.00    0.50    1.73     0  octez-baker-PtP
+
+10:38:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:39:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:39:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:39:21        0     16736      0.00      0.00 1244992  212584   5.35  octez-baker-PtP
+
+10:39:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:40:21        0      9218    8.28    1.13    0.00    0.30    9.42     1  octez-node
+10:40:21        0      9243    2.00    0.13    0.00    0.08    2.13     0  octez-node
+10:40:21        0     16736    0.97    0.72    0.00    0.57    1.68     0  octez-baker-PtP
+
+10:39:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:40:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:40:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:40:21        0     16736      0.00      0.00 1244992  212584   5.35  octez-baker-PtP
+
+10:40:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:41:21        0      9218    8.95    1.02    0.00    0.27    9.97     0  octez-node
+10:41:21        0      9243    0.98    0.08    0.00    0.03    1.07     0  octez-node
+10:41:21        0     16736    0.93    0.62    0.00    0.45    1.55     1  octez-baker-PtP
+
+10:40:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:41:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:41:21        0      9243      0.00      0.00 1219200  928568  23.35  octez-node
+10:41:21        0     16736      0.00      0.00 1244992  212584   5.35  octez-baker-PtP
+
+10:41:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:42:21        0      9218    8.32    1.07    0.00    0.37    9.38     0  octez-node
+10:42:21        0      9243    0.92    0.07    0.00    0.03    0.98     1  octez-node
+10:42:21        0     16736    1.02    0.68    0.00    0.50    1.70     1  octez-baker-PtP
+
+10:41:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:42:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:42:21        0      9243      0.00      0.00 1219200  928548  23.35  octez-node
+10:42:21        0     16736      0.00      0.00 1244992  212584   5.35  octez-baker-PtP
+
+10:42:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:43:21        0      9218    9.47    1.22    0.00    0.35   10.68     0  octez-node
+10:43:21        0      9243    1.20    0.08    0.00    0.08    1.28     1  octez-node
+10:43:21        0     16736    0.98    0.63    0.00    0.53    1.62     1  octez-baker-PtP
+
+10:42:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:43:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:43:21        0      9243      0.00      0.00 1219200  928548  23.35  octez-node
+10:43:21        0     16736      0.00      0.00 1244992  212584   5.35  octez-baker-PtP
+
+10:43:21      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+10:44:21        0      9218    8.17    1.05    0.00    0.27    9.22     0  octez-node
+10:44:21        0      9243    0.90    0.07    0.00    0.07    0.97     0  octez-node
+10:44:21        0     16736    1.08    0.62    0.00    0.63    1.70     1  octez-baker-PtP
+
+10:43:21      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+10:44:21        0      9218      0.00      0.00 1694140 1051612  26.44  octez-node
+10:44:21        0      9243      0.00      0.00 1219200  928548  23.35  octez-node
+10:44:21        0     16736      0.00      0.00 1244992  212584   5.35  octez-baker-PtP
