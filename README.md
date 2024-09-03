@@ -37,7 +37,7 @@ History types for a node:
 Network types:
 
 - Mainnet
-- Oxfordnet was a testnet. Seems to be deprecated.
+- Parisnet is the current testnet.
 - Ghostnet is a permanent testnet for devs or bakers.
 
 The node is intended for baking with no need to store content of every previous block. This is why the history type can be in **rolling** mode. Network type must be **mainnet**.
@@ -119,7 +119,7 @@ ssh-keygen -t ed25519 -f ~/.ssh/my_custom_key_name -C "comment or label for this
 ssh-copy-id -i $HOME/.ssh/keyname.pub debian@server.public.ip.address
 ```
 
-3. Login with your new ethereum user
+3. Login with your new user
 
 ```bash
 ssh tezos@server.public.ip.address
@@ -1167,6 +1167,9 @@ journalctl -u pyrometer -f
 
 Visit `http://<Public-IP>:2020` to see the Pyrometer dashboard.
 
+### 9.2.3 Other monitoring tools
+
+Grafana prometheus with a premade dashboard : [https://gitlab.com/nomadic-labs/grafazos](https://gitlab.com/nomadic-labs/grafazos)
 
 # 10. Maintenance 
 
