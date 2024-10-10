@@ -107,7 +107,7 @@ The basic rules of hardening SSH are:
 - Log unauthorized login attempts (and consider software to block/ban users who try to access your server too many times, like fail2ban)
 - Lock down SSH to only the ip range your require (if you feel like it)
 
-1. Create a new ssh key locally
+1. Create a new ssh key locally.
 
 ```bash
 ssh-keygen -t ed25519 -f ~/.ssh/my_custom_key_name -C "comment or label for this key"
@@ -119,7 +119,7 @@ ssh-keygen -t ed25519 -f ~/.ssh/my_custom_key_name -C "comment or label for this
 ssh-copy-id -i $HOME/.ssh/keyname.pub debian@server.public.ip.address
 ```
 
-3. Login with your new user
+3. Login with your new user.
 
 ```bash
 ssh tezos@server.public.ip.address
@@ -127,13 +127,13 @@ ssh tezos@server.public.ip.address
 
 4. Disable root login and password based login. 
 
-Edit the /etc/ssh/sshd_config file:
+Open the SSH configuration file in a text editor:
 
 ```bash
 sudo nano /etc/ssh/sshd_config
 ```
 
-Update the following lines:
+5. Update the following lines:
 
 ```
 ChallengeResponseAuthentication no
@@ -142,13 +142,13 @@ PermitRootLogin prohibit-password
 PermitEmptyPasswords no
 ```
 
-5. Validate the syntax of your new SSH configuration.
+6. Validate the syntax of your new SSH configuration.
 
 ```bash
 sudo sshd -t
 ```
 
-6. If no errors with the syntax validation, restart the SSH process
+7. If no errors with the syntax validation, restart the SSH process.
 
 ```bash
 sudo systemctl restart sshd
@@ -317,7 +317,7 @@ sudo ss -tulpn or sudo netstat -tulpn
 
 ## 2.10 Time Sync Check
 
-Run the following command:
+Run the following command.
 
 ```bash
 timedatectl 
@@ -343,19 +343,17 @@ If you see error message Failed to set ntp: NTP not supported, you may need to i
 
 ## 3.1 Setup tezos node with Debian
 
-Resources:
-- [Tezos Node Setup](https://chrispinnock.com/tezos/node/)
 
-1. Update and install packages
+1. Update and install packages.
 
 ```bash
 sudo apt update && sudo apt upgrade
 sudo apt install libev4 libhidapi-libusb0 curl net-tools
 ```
 
-2. Install octez packages
+2. Install octez packages.
 
-**Important**: Install in this order!
+**Important**: Install in this order! Also there is a difference between using sudo in every command or using "sudo su" and then performing the statements. Keep that in mind.
 
 ```bash
 curl -o octez-node.deb https://pkgbeta.tzinit.org/debian-12/octez-node_20.1-1_amd64.deb
@@ -375,7 +373,7 @@ sudo chown -R root:root /var/log/tezos
 sudo chmod +x /usr/local/bin/octez-node
 ```
 
-3. Initialise configuration:
+3. Initialise configuration.
 
 ```bash
 octez-node config init --data-dir /var/tezos/.tezos-node \
@@ -414,7 +412,7 @@ octez-node config update --data-dir /var/tezos/.tezos-node \
 
 ## 3.2 Get snapshot
 
-Install snapshot
+1. Get and import the snapshot.
 
 ```bash
 wget -O /tmp/snap https://snapshots.eu.tzinit.org/mainnet/rolling
@@ -433,7 +431,7 @@ rm -rf /var/tezos/.tezos-node/*
 mv /tmp/tezos_config_backup.json /var/tezos/.tezos-node/config.json
 ```
 
-After importing the context from the snapshot delete tmp folder
+2. After importing the context from the snapshot delete tmp folder.
 
 ```bash
 rm /tmp/snap
@@ -444,9 +442,13 @@ rm /tmp/snap
 As root, start the node using systemctl. The enable command will ensure that the node starts on boot.
 Since we need to expose the RPC endpoint to the outside add another rpc-addr with `0.0.0.0:8733`.
 
+1. Create systemd service file for the node.
+
 ```bash
 sudo nano /etc/systemd/system/octez-node.service
 ```
+
+2. Add this.
 
 ```ini
 [Unit]
@@ -468,17 +470,19 @@ RequiredBy=tezos-baker.service tezos-accuser.service
 
 **NOTE**: To not overwrite the config values instead of this above use flag --config-file /var/tezos/.tezos-node/config.json in ExecStart
 
-After any changes in systemd file, start or restart:
+3. After any changes in systemd file, start or restart.
 
 ```bash
+#Option 1
 sudo systemctl daemon-reload
 systemctl enable octez-node.service
 systemctl start octez-node.service
 
+#Option 2
 sudo systemctl restart octez-node.service
 ```
 
-Check the status of the systemd service:
+4. Check the status of the systemd service.
 
 ```bash
 sudo systemctl status octez-node.service
@@ -488,12 +492,14 @@ sudo systemctl status octez-node.service
 
 You can now view the progress of the node in the log file. It will sync with the network and fill the gap from the point that the snapshot was taken to the current block. Then you will have a working Tezos node.
 
+5. Always see the logs for more information.
+
 ```bash
 sudo tail -f /var/log/tezos/node.log
 journalctl -f -u octez-node.service -b
 ```
 
-You can also monitor the progress of the sync with the network using:
+6. Check node synchronisation.
 
 ```bash
 octez-client bootstrapped
@@ -502,145 +508,32 @@ octez-client bootstrapped
 ![Octez Node bootstrapped status output](docs/img/bootstrapped-sync-status.png)
 
 
-
-# 4. Tezos Client Setup
-
-## 4.1 Set base directory and configuration
-
-```bash
-sudo mkdir -p /var/tezos/.tezos-client
-sudo chown -R $(whoami):$(whoami) /var/tezos/.tezos-client
-octez-client --base-dir /var/tezos/.tezos-client config init
-octez-client --base-dir /var/tezos/.tezos-client --endpoint http://localhost:8732 config update
-octez-client --base-dir /var/tezos/.tezos-client rpc get /chains/main/blocks/head
-```
+Further Resources: [Tezos Node Setup](https://chrispinnock.com/tezos/node/)
 
 
-# 5. Tezos Baker Setup Guide
+## 3.4 Tezos Client Setup
 
-Resources:
-- [Run a persistent baker](https://opentezos.com/node-baking/baking/persistent-baker/)
-- [Tezos Baker setup](https://chrispinnock.com/tezos/baker/)
-
-This guide provides instructions for setting up a Tezos baker on a Debian-based system using systemd.
-
-## 5.1 Useful commands
-
-List known addresses and show hashes and public key, -S for secret key
+1. Set base directory and configuration for tezos client.
 
 ```bash
-octez-client --endpoint http://<Public-IP>:8733 list known addresses
-octez-client --endpoint http://<Public-IP>:8733 show address <alias> -S
+sudo mkdir -p /root/.tezos-client
+sudo chown -R $(whoami):$(whoami) /root/.tezos-client
+octez-client --base-dir /root/.tezos-client config init
+octez-client --base-dir /root/.tezos-client --endpoint http://localhost:8732 config update
+octez-client --base-dir /root/.tezos-client rpc get /chains/main/blocks/head
 ```
 
-## 5.2 Creating a Dynamic Baker Start Script
+## 3.5 Allow local connection
 
-Since the Tezos protocol changes every few months, we need to create a custom script to dynamically fetch the current protocol and start the baker accordingly.
+To perform the commands to setup the ledger as remote signer on your local machine, the RPC endpoint must be accessible. 
 
-1. Create a new file for the baker start script:
+1. Check first if the node is fully synced.
 
 ```bash
-sudo nano /usr/local/bin/tezos-baker-start
+octez-client bootstrapped
 ```
 
-2. Add the following content to the file:
-
-```bash
-#!/bin/bash
-
-# Get the current protocol
-PROTOCOL=$(octez-client rpc get /chains/main/blocks/head/metadata | jq -r .protocol | sed -E 's/^(Pt|Ps)(.{6}).*/\1\2/')
-
-# Start the baker with the current protocol
-exec /usr/bin/octez-baker-$PROTOCOL --endpoint http://127.0.0.1:8732 --password-filename /root/.tezos-client/pw run with local node /var/tezos/.tezos-node consensus_key --liquidity-baking-toggle-vote pass
-```
-
-3. Make the script executable:
-
-```bash
-sudo chmod +x /usr/local/bin/tezos-baker-start
-```
-
-## 5.3 Configuring the Baker Service
-
-1. Edit the baker service file:
-
-```bash
-sudo nano /etc/systemd/system/octez-baker.service
-```
-
-2. Add the following content to the file:
-
-```ini
-[Unit]
-Description=Tezos baker Service
-Documentation=http://tezos.gitlab.io/
-After=network-online.target octez-node.service
-Wants=network-online.target
-Requires=octez-node.service
-
-[Service]
-User=root
-Group=root
-Environment="TEZOS_LOG=* -> debug"
-ExecStart=/usr/local/bin/tezos-baker-start
-Restart=on-failure
-
-[Install]
-WantedBy=multi-user.target
-```
-
-## 5.4 Starting and Managing the Baker Service
-
-1. Stop the existing baker service (if running):
-
-```bash
-sudo systemctl stop octez-baker.service
-```
-
-2. Reload the systemd daemon to recognize the changes:
-
-```bash
-sudo systemctl daemon-reload
-```
-
-3. Enable the baker service to start on boot:
-
-```bash
-sudo systemctl enable octez-baker.service
-```
-
-4. Start the baker service:
-
-```bash
-sudo systemctl start octez-baker.service
-```
-
-5. Restart the baker service (if needed):
-
-```bash
-sudo systemctl restart octez-baker.service
-```
-
-6. Check the status of the baker service:
-
-```bash
-sudo systemctl status octez-baker.service
-```
-7. To monitor the baker's activity, you can use the following commands:
-
-```bash
-journalctl -f -u octez-baker.service -b
-```
-
-
-# 6. Setup Ledger as Remote Signer
-
-## 6.1 Allow local connection
-
-To perform the commands to setup the ledger as remote signer on your local machine, the rpc endpoint must be accessible. 
-
-1. Update node config to allow access to monitoring status to outside via acl filters. (Otherwise this Error will appear: The server doesn't authorize this endpoint (ACL filtering))
+2. Update node config to allow access to monitoring status to outside via acl filters. (Otherwise this Error will appear: The server doesn't authorize this endpoint (ACL filtering))
 
 ```bash
 octez-node config update   \
@@ -654,20 +547,57 @@ octez-node config update   \
 --metrics-addr="127.0.0.1:9091" \
 --rpc-acl=[{address="0.0.0.0:8733",blacklist=[]}]
 ```
-2. Allow TCP access to your IP address in Firewall and maybe OVH settings.
 
-3. Check if the node is fully synced
+3. Allow TCP access to your IP address via server settings.
+
+
+
+# 4. Keys
+
+In the Tezos blockchain there are two type of keys we use in our setup:
+
+- **Delegate** key: This key is the main key of a baker, used for managing funds and staking (delegation). This key controls the funds and is critical for the ownership of the staking balance.
+
+- **Consensus** Key: This is a separate key used for signing consensus operations like baking and endorsing blocks. It is a more specialized key used solely for participating in the consensus process.
+
+For enhanced security, we use a **Ledger** hardware wallet to protect the delegate key, ensuring that the main funds are kept safe from unauthorized access while keeping the consensus key flexible for baking operations.
+
+We will create a consensus key on the server, where the Tezos node and baker are running. This enhances security by separating the key used for baking and consensus operations from the main funds key (delegate key). Additionally, this allows consensus key *rotation* without affecting the delegate key and even if the consensus key is compromised, the main funds controlled by the delegate key remain secure. 
+
+## 4.1 Create consensus key 
+
+1. On the server create the consensus key and show the Secret.
 
 ```bash
-octez-client bootstrapped
+octez-client gen keys vpsconsensus
+octez-client show address vpsconsensus -S
+```
+
+Output:
+```
+Hash: tz1hq....
+Public Key: edpkv9....
+Secret Key: encrypted:edesk....
+```
+
+2. Save password
+
+Apart from saving the password in your preferred secure place store it on the server for later use in the baker.
+
+```bash
+echo "<PW>" > ~/.tezos-client/pw
 ```
 
 
-## 6.2 Local setup to connect ledger with node on OVH server
+# 5. Local Ledger Setup
 
-### 6.2.1 Install octez client locally (on Mac)
+## 5.1 Install octez client
 
-1. Install brew if not already done
+Perform these steps on your local computer where you connect the Ledger.
+
+**Note**: Make sure to allow connections from your IP address to your server!
+
+1. Install brew if not already done.
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -677,19 +607,20 @@ brew tap serokell/tezos-packaging-stable https://github.com/serokell/tezos-packa
 brew install tezos-client
 ```
 
-2. Verify that the Octez client is installed by running this command:
+2. Verify that the Octez client is installed by running this command.
 
 ```bash
 octez-client --version
 ```
 
-3. Check connection with rpc node endpoint. 
+3. Get the RPC node endpoint. <Public-IP> is the servers IPv4 DNS address.
+
 ```bash
 telnet <Public-IP> 8733
 curl http://<Public-IP>:8733/chains/main/blocks/head/header
 ```
 
-4. Try this on the node instance on OVH server to check if node is running:
+4. Try this to check if node is running.
 
 Returns info about the latest block header:
 
@@ -699,7 +630,14 @@ curl -s http://<Public-IP>:8733/chains/main/blocks/head/header
 octez-client --endpoint http://<Public-IP>:8733 rpc get /chains/main/blocks/head/hash
 ```
 
-Test which ports are listening
+5. Configure and set rpc node as endpoint.
+
+```bash
+octez-client config init
+octez-client --endpoint http://<Public-IP>:8733 config update
+```
+
+(Additional debug): Test which ports are listening on your server:
 
 ```bash
 sudo netstat -tulnp | grep LISTEN
@@ -707,38 +645,29 @@ sudo netstat -tulnp | grep :8732
 sudo netstat -tulnp | grep octez-node
 ```
 
-5. Configure and set rpc node as endpoint
 
-```bash
-octez-client config init
-octez-client --endpoint http://<Public-IP>:8733 config update
-octez-client config show
-```
+After this is finished keep the ledger connected because we will locally create the delegate key, move to the server and create a consensus key for the baking process. Then locally again, import that key and register the consensus key together with that delegate key.
 
-## 6.2.2 Register as a delegate with the consensus key
 
-**Note**: Always include the "--endpoint http://<Public-IP>:8733" in every `octez-client` command!
-
-Process:
+## 5.2 Register as a delegate
 
 1. Connect and unlock your Ledger to your computer.
-2. On Ledger Live
+2. On Ledger Live:
 
 Activate Developer Mode in Experimental Settings. 
 
-![Ledger Live Developer Mode](/docs/img/LedgerLive_DeveloperMode.png)
+![Ledger Live Developer Mode](./docs/img/LedgerLive_DeveloperMode.png)
 
 Install Tezos Wallet and Tezos Baker app.
 
-![Ledger Live Tezos Baker Mode](/docs/img/LedgerLive_TezosApps.png)
-
+![Ledger Live Tezos Baker Mode](./docs/img/LedgerLive_TezosApps.png)
 
 3. Open the Tezos wallet app on the device (Must be open for all Ledger operations!)
 
-4. This happens locally: Import consensus key from above kms-consensus-key setup. It's the PublicKey.
+4. Import the consensus key **locally**.
 
 ```bash
-octez-client --endpoint http://<Public-IP>:8733 import public key consensus_key "unencrypted:sppk7..."
+octez-client --endpoint http://<Public-IP>:8733 import secret key local_vpsconsensus encrypted:edesk1...
 ```
 
 5. List connected ledgers to get the path
@@ -780,14 +709,13 @@ octez-client --endpoint http://<Public-IP>:8733 import secret key ledger_softsta
 
 This also imports the secret key with alias `ledger_softstack_delegate_key`. 
 
-7. Validate the public key hash on your connected ledger
+7. Validate the public key hash on your connected ledger.
 
 8. Register delegate with below command on your computer.
 
 ```bash
 octez-client --endpoint http://<Public-IP>:8733 \
-register key ledger_softstack_delegate_key as delegate \
-with consensus key unencrypted:<KMS Consensus Pub Key>
+register key ledger_softstack_delegate_key as delegate 
 ```
 
 This shows that the funds from the connected wallet was used to register as delegate key and the kms consensus key is used for baking processes. 
@@ -801,28 +729,204 @@ octez-client --endpoint http://<Public-IP>:8733 stake <AMOUNT> for ledger_softst
 Now check if the balance of the wallet has these gas fees subtracted with next command: Check funds and baker rights
 
 
+10. Set consensus key
+
+```bash
+octez-client --endpoint http://<Public-IP>:8733 set consensus key for ledger_softstack_delegate_key to local_vpsconsensus
+```
+
+Output:
+
+````
+Warning:
+        This is NOT the Tezos Mainnet.
+        Do NOT use your fundraiser keys on this network.
+Node is bootstrapped.
+Estimated gas: 169.046 units (will add 100 for safety)
+Estimated storage: no bytes added
+Enter password for encrypted key:
+Operation successfully injected in the node.
+Operation hash is 'owr9KJW2N87f1389ahUHAUWHbuaaHngsTAT8qqvwsDaiYicLDn7EYcSoKfw'
+Waiting for the operation to be included...
+Operation found in block: BMcLB82aihsd82aADWHyYojPHqavoHKc575J1qSdBrFx3GZfcrpvQM29wD (pass: 3, offset: 1)
+This sequence of operations was run:
+  Manager signed operations:
+...
+````
+
+
+
+
+
+# 6. Setup Baker 
+
+## 6.1 Creating a Dynamic Baker Start Script
+
+Creating a persistent baker using these [instructions](https://opentezos.com/node-baking/baking/persistent-baker/) from opentezos. Since the Tezos protocol changes every few months, we need to create a custom script to dynamically fetch the current protocol and start the baker accordingly.
+
+This guide provides instructions for setting up a Tezos baker on a Debian-based system using systemd.
+
+1. Create a new file for the baker start script:
+
+```bash
+sudo nano /usr/local/bin/tezos-baker-start
+```
+
+2. Add the following content to the file:
+
+```bash
+#!/bin/bash
+
+# Get the current protocol
+PROTOCOL=$(octez-client rpc get /chains/main/blocks/head/metadata | jq -r .protocol | sed -E 's/^(Pt|Ps)(.{6}).*/\1\2/')
+echo "$(date): Current protocol is $PROTOCOL" >> /var/log/tezos/baker_protocol.log
+
+# Start the baker with the current protocol
+exec /usr/bin/octez-baker-$PROTOCOL --mode client --base-dir /root/.tezos-client --endpoint http://127.0.0.1:8732 --password-filename /root/.tezos-client/pw run with local node /var/tezos/.tezos-node vpsconsensus --liquidity-baking-toggle-vote pass
+```
+
+3. Make the script executable:
+
+```bash
+sudo chmod +x /usr/local/bin/tezos-baker-start
+```
+
+
+## 6.2 Configuring the Baker Service
+
+1. Edit the baker service file:
+
+```bash
+sudo nano /etc/systemd/system/octez-baker.service
+```
+
+2. Add the following content to the file:
+
+```ini
+[Unit]
+Description=Tezos baker Service
+Documentation=http://tezos.gitlab.io/
+After=network-online.target octez-node.service
+Wants=network-online.target
+Requires=octez-node.service
+
+[Service]
+User=root
+Group=root
+Environment="TEZOS_LOG=* -> debug"
+ExecStart=/usr/local/bin/tezos-baker-start
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
+
+## 6.3 Starting and Managing the Baker Service
+
+1. Stop the existing baker service (if running):
+
+```bash
+sudo systemctl stop octez-baker.service
+```
+
+2. Reload the systemd daemon to recognize the changes:
+
+```bash
+sudo systemctl daemon-reload
+```
+
+3. Enable the baker service to start on boot:
+
+```bash
+sudo systemctl enable octez-baker.service
+```
+
+4. Start the baker service:
+
+```bash
+sudo systemctl start octez-baker.service
+```
+
+5. Restart the baker service (if needed):
+
+```bash
+sudo systemctl restart octez-baker.service
+```
+
+6. Check the status of the baker service:
+
+```bash
+sudo systemctl status octez-baker.service
+```
+
+7. To monitor the baker's activity, you can use the following commands:
+
+```bash
+journalctl -f -u octez-baker.service -b
+journalctl -f -u octez-baker.service -b > /var/log/baker-logs/16-09-24.log
+journalctl --unit=octez-baker.service --since "1 days ago" --until "now" > /var/log/baker-logs/$(date +%d-%m-%y).log
+```
+
+**Hint**:
+Since you always need to perform all of these commands at once, copy them from here:
+
+```bash
+sudo systemctl stop octez-baker.service
+sudo systemctl daemon-reload
+sudo systemctl enable octez-baker.service
+sudo systemctl start octez-baker.service
+journalctl -f -u octez-baker.service -b
+```
+
+8. Success! If you see below output in the baker logs you have a successfully running baker.
+
+Run `journalctl -f -u octez-baker.service -b`:
+
+
+````
+received 1 attestations (power: 127) (total voting power: 3790, 70
+attestations)
+received 1 attestations (power: 12) (total voting power: 3802, 71
+attestations)
+quorum reached (voting power: 4756, 72 attestations)
+automaton step: current phase awaiting attestations, event
+quorum reached with 72 attestations for BMBKoDiQY52KDLKdnZ9tUVGLMCF5fPqKtu3MofrKoceak1X8hY5 at round 0
+found an elected block at level 6813872, round 0... checking baking rights
+next potential slot for level 6813873 is at round 3006 at
+2025-06-29T05:53:45-00:00 for
+vpsconsensus (tz1hq2SUp3jJa8uYa8xyZzAyfSb3rgG8GEHQ)
+on behalf of tz1SaRa7u2dnoJGKrWW8Qimjk5NwHC5E71A6
+waiting 7.657s until end of round 0 at 2024-10-10T12:36:30-00:00
+````
+
+Also check the `Rewards`, `Schedule` and `Consensus Key` Tabs on a tezos explorer like tzstats, or tzkt.io. Add your delegate key.
+
+````
+https://tzkt.io/<DELEGATE_KEY>/schedule
+````
+
 # 7. Setup Node and Baker restart if they fail
 
-0. Install Postmark
+1. Install Postmark.
 
 sudo apt-get install python3-pip
 pip3 install postmark
 
-1. Create a shell script 
+2. Create a shell script.
 
 ```bash
 sudo nano /usr/local/bin/tezos-node-monitor.sh
 ```
 
-1. Add contents from [Failsafe email script](/docs/files/failsafe_email.sh) script.
+3. Add contents from [Failsafe email script](./docs/files/failsafe_email.sh) script.
 
-2. Make executable
+4. Make executable.
 
 ```bash
 sudo chmod +x /usr/local/bin/tezos-node-monitor.sh
 ```
 
-4. Add systemd service
+5. Add systemd service.
 
 ```bash
 sudo nano /etc/systemd/system/tezos-monitor.service
@@ -842,7 +946,7 @@ User=root
 WantedBy=multi-user.target
 ```
 
-5. Reload systemd, enable and start the service:
+6. Reload systemd, enable and start the service.
 
 ```bash
 sudo systemctl daemon-reload
@@ -850,7 +954,7 @@ sudo systemctl enable tezos-monitor.service
 sudo systemctl start tezos-monitor.service
 ```
 
-Restart service
+Restart service:
 
 ```bash
 sudo systemctl restart tezos-monitor.service
@@ -863,7 +967,6 @@ sudo systemctl status tezos-monitor.service
 journalctl -f -u tezos-monitor.service -b
 tail -f /var/log/tezos-monitor.log
 ```
-
 
 # 8. Setup accuser
 
@@ -1166,6 +1269,8 @@ journalctl -u pyrometer -f
 ### 9.2.2 Pyrometer dashboard
 
 Visit `http://<Public-IP>:2020` to see the Pyrometer dashboard.
+
+![Pyrometer Dashboard](./docs/img/Pyrometer_Dashboard.png)
 
 ### 9.2.3 Other monitoring tools
 
