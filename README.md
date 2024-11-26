@@ -1383,6 +1383,47 @@ Grafana prometheus with a premade dashboard : [https://gitlab.com/nomadic-labs/g
 
 Implement a routine schedule for these maintenance tasks, with some performed weekly, others monthly, and some quarterly or bi-annually as appropriate. Regular maintenance will help ensure the longevity, security, and efficiency of your Tezos validator node.
 
+
+# 11. Updating octez version
+
+As of November 2024, v21.0 is released and all nodes need to update to that protocol manually by following below steps. Read the [release statement](https://tezos.gitlab.io/releases/version-21.html) for more information.
+
+
+1. Stop the baker and node
+```bash
+sudo su
+systemctl stop octez-baker.service
+systemctl stop octez-node.service
+````
+
+2. Upgrade storage
+```bash
+octez-node upgrade storage --data-dir /var/tezos/.tezos-node
+#Output: Nov 26 07:54:22.840: node data dir is up-to-date
+```
+
+3. Restart node
+```bash
+sudo systemctl daemon-reload
+systemctl start octez-node.service
+sudo systemctl status octez-node.service
+# Wait a minute or two for the node to start before starting the baker
+```
+
+4. Restart baker
+
+```bash
+systemctl start octez-baker.service
+sudo systemctl status octez-baker.service
+# Output: Baker 20.1 (1a991a03) for PsParisCZo7K started.
+````
+
+5. Check logs if everything works
+```bash
+journalctl -f -u octez-node.service -b
+journalctl -f -u octez-baker.service -b
+```
+
 # Congratulations
 
 You have successfully setup your Tezos validator node on OVH server.
